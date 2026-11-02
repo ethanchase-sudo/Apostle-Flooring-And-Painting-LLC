@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apostle Flooring &amp; Painting LLC — Centralia, WA</title>
+<meta name="description" content="Family-owned painting, flooring, siding and home remodeling in Centralia, Washington. Residential & commercial. Free estimates — (360) 464-8555.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f0ea;
+  --paper-2:#e9e4db;
+  --ink:#15130f;
+  --ink-2:#2a2620;
+  --stone:#7d776d;
+  --line:rgba(21,19,15,.14);
+  --line-inv:rgba(243,240,234,.16);
+  --red:#c8232b;
+  --red-deep:#9e1a20;
+  --display:'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+  --serif:'Instrument Serif', Georgia, serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --pad:clamp(20px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--display);font-variation-settings:"wdth" 100;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--red);color:#fff}
+
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.cond{font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.86}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.wrap{padding:0 var(--pad)}
+.red{color:var(--red)}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad);color:var(--paper);transition:background .4s var(--ease),color .4s var(--ease),padding .4s var(--ease),border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(243,240,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);padding:12px var(--pad);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:40px;height:30px;flex:none}
+.brand-word{display:flex;flex-direction:column;line-height:1}
+.brand-word b{font-variation-settings:"wdth" 112;font-weight:900;font-size:21px;letter-spacing:.06em;color:var(--red)}
+.brand-word span{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;margin-top:4px;font-weight:500}
+.nav-links{display:flex;gap:30px;font-size:14px;font-weight:500}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;font-weight:600;font-size:14px;letter-spacing:.01em;border-radius:2px;transition:transform .3s var(--ease),background .3s,color .3s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-ghost{border:1px solid currentColor}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger i{position:absolute;left:9px;right:9px;height:1.5px;background:currentColor;transition:transform .3s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:23px}
+.menu-open .burger i:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;padding:100px var(--pad) 40px;gap:6px;transform:translateY(-100%);transition:transform .6s var(--ease)}
+.menu-open .mobile-menu{transform:none}
+.mobile-menu a.big{font-size:15vw}
+.menu-open .nav{color:var(--paper);background:transparent;border-color:transparent}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;height:100svh;min-height:680px;color:var(--paper);overflow:hidden;background:#0d0c0a}
+.hero-img{position:absolute;inset:-6% 0 0 0;background:url(assets/p-navy-house.jpg) center 40%/cover;transform-origin:center;will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.55) 0%,rgba(13,12,10,.05) 30%,rgba(13,12,10,.15) 55%,rgba(13,12,10,.88) 100%)}
+.hero-inner{position:absolute;inset:auto 0 0 0;z-index:2;padding:0 var(--pad) 40px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero h1{font-size:clamp(64px,11.5vw,196px)}
+.hero h1 .it{font-size:.82em;display:inline-block;margin-left:.04em;line-height:.9}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line > span{display:inline-block;transform:translateY(105%);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .line:nth-child(2) > span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) > span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.hero-side{max-width:330px;padding-bottom:12px;opacity:0;animation:fade 1s .6s var(--ease) forwards}
+.hero-side p{font-size:16px;line-height:1.5;color:rgba(243,240,234,.86);margin-bottom:22px}
+@keyframes fade{to{opacity:1}}
+.hero-meta{position:absolute;z-index:2;top:104px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;color:rgba(243,240,234,.78)}
+.hero-chip{position:absolute;z-index:2;right:var(--pad);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{background:var(--paper);color:var(--ink);width:150px;box-shadow:0 20px 50px rgba(0,0,0,.3);transform:rotate(2deg)}
+.chip .sw{height:96px;background:#2f3e55}
+.chip .tx{padding:10px 12px 12px}
+.chip .tx b{display:block;font-size:13px;font-weight:700}
+.chip .tx span{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--stone);text-transform:uppercase}
+
+/* ---------- BRUSH TICKER ---------- */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;border-top:1px solid var(--line-inv)}
+.ticker-track{display:flex;gap:18px;width:max-content;animation:tick 48s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+.stroke{font-variation-settings:"wdth" 70;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:.02em;padding:8px 34px 8px 26px;white-space:nowrap;clip-path:polygon(2% 8%,6% 0,100% 6%,97% 22%,100% 40%,96% 60%,100% 80%,97% 100%,4% 94%,0 76%,3% 52%,0 30%)}
+.stroke.r{background:var(--red);color:#fff}
+.stroke.w{background:var(--paper);color:var(--ink)}
+
+/* ---------- SECTION SCAFFOLD ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,11vw,160px) var(--pad)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start;margin-bottom:clamp(40px,6vw,80px)}
+.sec-head .mono{padding-top:10px;color:var(--stone)}
+.sec-head h2{font-size:clamp(48px,7.4vw,124px)}
+.dark{background:var(--ink);color:var(--paper)}
+.dark .sec-head .mono{color:rgba(243,240,234,.55)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- INTRO ---------- */
+.intro{display:grid;grid-template-columns:200px 1fr;gap:24px}
+.intro-statement{font-size:clamp(28px,3.6vw,54px);line-height:1.12;font-weight:400;letter-spacing:-.015em;max-width:21ch;text-wrap:balance}
+.intro-statement em{font-family:var(--serif);font-style:italic}
+.intro-statement .u{background:linear-gradient(var(--red),var(--red)) 0 92%/100% 3px no-repeat}
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);margin-top:clamp(56px,7vw,100px);align-items:end}
+.intro-photo{position:relative;aspect-ratio:4/3;overflow:hidden}
+.intro-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.intro-photo:hover img{transform:scale(1.04)}
+.cap{position:absolute;left:14px;bottom:14px;background:var(--paper);color:var(--ink);padding:6px 10px}
+.facts{border-top:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.fact .mono{color:var(--red)}
+.fact b{font-weight:600;font-size:19px;display:block}
+.fact span{color:var(--stone);font-size:15px}
+
+/* ---------- SERVICES ---------- */
+.svc-list{border-top:1px solid var(--line-inv)}
+.svc{position:relative;display:grid;grid-template-columns:200px 1fr 1.1fr 60px;gap:24px;align-items:center;padding:clamp(22px,3vw,40px) 0;border-bottom:1px solid var(--line-inv);cursor:default}
+.svc .num{color:rgba(243,240,234,.45)}
+.svc h3{font-size:clamp(54px,8vw,132px);transition:color .4s,transform .6s var(--ease)}
+.svc p{color:rgba(243,240,234,.7);max-width:40ch;font-size:16px}
+.svc .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.svc .tags span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-inv);padding:4px 8px;color:rgba(243,240,234,.8)}
+.svc .go{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-inv);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.svc:hover h3{color:var(--red);transform:translateX(12px)}
+.svc:hover .go{background:var(--red);border-color:var(--red);transform:rotate(-45deg)}
+.svc-float{position:fixed;left:0;top:0;width:320px;aspect-ratio:4/5;pointer-events:none;z-index:40;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .35s,transform .45s var(--ease)}
+.svc-float.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.svc-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.svc-float img.on{opacity:1}
+.also{display:grid;grid-template-columns:200px repeat(4,1fr);gap:24px;margin-top:56px}
+.also .mono{color:rgba(243,240,234,.55)}
+.also div b{display:block;font-weight:600;font-size:19px;margin-bottom:6px}
+.also div span{font-size:15px;color:rgba(243,240,234,.62)}
+
+/* ---------- GALLERY ---------- */
+.gal-bar{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px;padding-left:224px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{padding:10px 16px;border:1px solid var(--line);font-size:14px;font-weight:500;border-radius:40px;transition:all .3s var(--ease)}
+.filters button:hover{border-color:var(--ink)}
+.filters button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filters button sup{font-family:var(--mono);font-size:9px;margin-left:4px;opacity:.6}
+.legend{display:flex;gap:18px;color:var(--stone)}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(80px,7.4vw,120px);grid-auto-flow:dense;gap:10px}
+.tile{position:relative;overflow:hidden;cursor:zoom-in;background:var(--paper-2);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
+.tile:hover img{transform:scale(1.05)}
+.tile .meta{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;color:var(--paper);background:linear-gradient(transparent,rgba(13,12,10,.78));display:flex;justify-content:space-between;align-items:end;gap:12px;transform:translateY(8px);opacity:0;transition:all .45s var(--ease)}
+.tile:hover .meta{opacity:1;transform:none}
+.tile .meta b{font-weight:600;font-size:16px;display:block;line-height:1.2}
+.tile .badge{position:absolute;top:12px;left:12px;padding:5px 9px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--paper);color:var(--ink);display:flex;align-items:center;gap:6px}
+.tile .badge i{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.tile .badge.ref i{background:var(--stone)}
+.tile.hide{display:none}
+.s-a{grid-column:span 7;grid-row:span 5}
+.s-b{grid-column:span 5;grid-row:span 3}
+.s-c{grid-column:span 5;grid-row:span 2}
+.s-d{grid-column:span 4;grid-row:span 3}
+.s-e{grid-column:span 8;grid-row:span 4}
+.s-f{grid-column:span 4;grid-row:span 4}
+.s-g{grid-column:span 6;grid-row:span 4}
+
+/* ---------- BEFORE / AFTER ---------- */
+.ba-sec{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.ba{position:relative;aspect-ratio:539/700;overflow:hidden;user-select:none;touch-action:none;cursor:ew-resize;background:#000}
+.ba .layer{position:absolute;inset:0;background-image:url(assets/s-refinish-ba.jpg);background-size:200% 100%;background-repeat:no-repeat}
+.ba .before{background-position:0% 50%}
+.ba .after{background-position:100% 50%;clip-path:inset(0 0 0 50%)}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--paper);transform:translateX(-1px)}
+.ba .knob{position:absolute;top:50%;left:50%;width:62px;height:62px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;transform:translate(-50%,-50%);box-shadow:0 10px 30px rgba(0,0,0,.35);font-family:var(--mono);font-size:14px}
+.ba .lbl{position:absolute;top:16px;padding:6px 10px;background:rgba(13,12,10,.75);color:var(--paper)}
+.ba .lbl.l{left:16px}.ba .lbl.r{right:16px;background:var(--red)}
+.ba-copy h2{font-size:clamp(48px,6.6vw,110px);margin-bottom:28px}
+.ba-copy p{font-size:18px;color:var(--ink-2);max-width:42ch;margin-bottom:16px}
+.ba-copy .note{color:var(--stone)}
+
+/* ---------- FIELD NOTE (FB post) ---------- */
+.field{display:grid;grid-template-columns:200px 1.2fr 1fr;gap:24px;align-items:stretch}
+.field-photo{position:relative;min-height:520px;overflow:hidden}
+.field-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.field-card{background:var(--paper);color:var(--ink);padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.field-card .q{font-size:clamp(24px,2.4vw,34px);line-height:1.2;letter-spacing:-.01em}
+.field-card .q em{font-family:var(--serif)}
+.field-card .src{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;color:var(--stone)}
+
+/* ---------- REVIEW ---------- */
+.review{text-align:center;max-width:1100px;margin:0 auto}
+.stars{display:flex;justify-content:center;gap:6px;margin-bottom:30px}
+.stars i{width:16px;height:16px;background:var(--red);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.review blockquote{font-family:var(--serif);font-size:clamp(36px,4.8vw,76px);line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+.review blockquote .op{color:var(--red)}
+.review cite{display:block;margin-top:34px;font-style:normal}
+.review cite b{font-weight:600}
+
+/* ---------- HOW / PAYMENT ---------- */
+.how{display:grid;grid-template-columns:200px repeat(3,1fr);gap:24px;border-top:1px solid var(--line);padding-top:40px}
+.how .step .n{font-variation-settings:"wdth" 62;font-weight:800;font-size:88px;line-height:.8;color:var(--red);display:block;margin-bottom:22px}
+.how .step b{display:block;font-size:22px;font-weight:600;margin-bottom:8px}
+.how .step span{color:var(--stone);font-size:16px}
+.pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.pay span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:5px 9px;color:var(--ink-2)}
+
+/* ---------- SOCIAL ---------- */
+.social{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.soc{position:relative;display:block;min-height:440px;overflow:hidden;color:var(--paper);padding:32px;isolation:isolate}
+.soc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.soc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,12,10,.15),rgba(13,12,10,.82))}
+.soc:hover img{transform:scale(1.05)}
+.soc .top{display:flex;justify-content:space-between}
+.soc .bot{position:absolute;left:32px;right:32px;bottom:30px;display:flex;justify-content:space-between;align-items:end;gap:20px}
+.soc h3{font-size:clamp(46px,5.6vw,92px)}
+.soc .handle{font-family:var(--serif);font-style:italic;font-size:28px;margin-top:10px;display:block}
+.soc .go{width:64px;height:64px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;flex:none;transition:transform .4s var(--ease),background .3s,color .3s}
+.soc:hover .go{transform:rotate(-45deg);background:var(--red);color:#fff}
+
+/* ---------- CONTACT ---------- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px)}
+.contact h2{font-size:clamp(60px,9vw,150px);margin-bottom:34px}
+.phone{display:inline-block;font-variation-settings:"wdth" 80;font-weight:700;font-size:clamp(34px,4.2vw,64px);letter-spacing:-.01em;line-height:1;border-bottom:3px solid var(--red);padding-bottom:6px;transition:color .3s}
+.phone:hover{color:var(--red)}
+.cinfo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:50px;border-top:1px solid var(--line-inv);padding-top:28px}
+.cinfo .mono{color:rgba(243,240,234,.5);display:block;margin-bottom:8px}
+.cinfo p{font-size:16px;color:rgba(243,240,234,.88)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;align-content:start}
+.fld{grid-column:span 1;position:relative;border-bottom:1px solid var(--line-inv);padding:22px 0 10px}
+.fld.full{grid-column:1/-1}
+.fld label{display:block;color:rgba(243,240,234,.5);margin-bottom:6px}
+.fld input,.fld textarea,.fld select{width:100%;background:transparent;border:0;outline:0;color:var(--paper);font:inherit;font-size:18px;padding:4px 0;resize:none}
+.fld select option{color:var(--ink)}
+.fld::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.fld:focus-within::after{transform:scaleX(1)}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.pills label{margin:0;cursor:pointer}
+.pills input{display:none}
+.pills span{display:inline-block;padding:8px 14px;border:1px solid var(--line-inv);border-radius:40px;font-size:14px;color:rgba(243,240,234,.85);transition:all .25s}
+.pills input:checked + span{background:var(--red);border-color:var(--red);color:#fff}
+.submit{grid-column:1/-1;margin-top:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.submit small{color:rgba(243,240,234,.5);font-size:13px;max-width:36ch}
+.sent{grid-column:1/-1;display:none;padding:30px 0;font-size:22px}
+form.done .sent{display:block}
+form.done .fld,form.done .submit{display:none}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:var(--paper);padding:0 var(--pad) 28px;overflow:hidden}
+.foot-word{font-variation-settings:"wdth" 125;font-weight:900;font-size:21.5vw;line-height:.78;letter-spacing:-.02em;color:var(--red);margin:0 -0.04em;padding-top:30px;white-space:nowrap}
+.foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line-inv);padding-top:22px;margin-top:30px;color:rgba(243,240,234,.6)}
+.foot-row a:hover{color:var(--paper)}
+
+/* ---------- LIGHTBOX ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(13,12,10,.96);display:grid;grid-template-rows:auto 1fr auto;color:var(--paper);opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+.lb.open{opacity:1;pointer-events:auto}
+.lb-top,.lb-bot{display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad)}
+.lb-stage{position:relative;display:grid;place-items:center;padding:0 90px;min-height:0}
+.lb-stage img{max-width:100%;max-height:calc(100svh - 160px);object-fit:contain;transition:opacity .3s}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;border:1px solid var(--line-inv);display:grid;place-items:center;transition:background .3s}
+.lb-nav:hover{background:var(--red);border-color:var(--red)}
+.lb-prev{left:20px}.lb-next{right:20px}
+.lb-close{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line-inv);padding:9px 14px;border-radius:30px}
+.lb-close:hover{background:var(--paper);color:var(--ink)}
+.lb-bot b{font-weight:600;font-size:18px}
+
+/* ---------- STICKY CALL (mobile) ---------- */
+.callbar{display:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav-cta .btn-ghost{display:none}
+  .sec-head,.intro,.field{grid-template-columns:1fr}
+  .sec-head .mono{padding:0}
+  .intro-grid,.ba-sec,.contact,.social{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr auto;gap:10px 16px}
+  .svc .num{grid-column:1/-1}
+  .svc > div:nth-of-type(1){grid-column:1/2}
+  .svc .go{grid-row:2;grid-column:2}
+  .svc .desc{grid-column:1/-1}
+  .svc-float{display:none}
+  .also{grid-template-columns:1fr 1fr}
+  .also .mono{grid-column:1/-1}
+  .gal-bar{padding-left:0}
+  .grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:70px}
+  .s-a,.s-e,.s-g{grid-column:span 6;grid-row:span 4}
+  .s-b,.s-c,.s-d,.s-f{grid-column:span 3;grid-row:span 3}
+  .how{grid-template-columns:1fr}
+  .field-photo{min-height:360px}
+  .hero-chip{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;z-index:60;left:12px;right:12px;bottom:12px;gap:8px}
+  .callbar a{flex:1;justify-content:center}
+  .lb-stage{padding:0 12px}
+  .lb-nav{top:auto;bottom:-60px}
+  footer{padding-bottom:90px}
+}
+@media (max-width:560px){
+  form{grid-template-columns:1fr}
+  .fld{grid-column:1/-1}
+  .cinfo{grid-template-columns:1fr}
+  .hero-meta .hide-s{display:none}
+  .tile .meta{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero h1 .line > span{transform:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#15130f"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#15130f"/><text x="200" y="160" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="900" font-size="44" letter-spacing="4" fill="#c8232b">APOSTLE</text></svg></template>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Apostle Flooring & Painting LLC — home">
+    <svg viewBox="0 0 40 30" fill="none" aria-hidden="true">
+      <polyline points="2,26 13,4 24,26" stroke="currentColor" stroke-width="4.2" stroke-linejoin="miter"/>
+      <polyline points="14,26 25,9 36,26" stroke="currentColor" stroke-width="4.2" stroke-linejoin="miter"/>
+      <rect x="22" y="17" width="2.6" height="2.6" fill="currentColor"/><rect x="25.4" y="17" width="2.6" height="2.6" fill="currentColor"/>
+      <rect x="22" y="20.4" width="2.6" height="2.6" fill="currentColor"/><rect x="25.4" y="20.4" width="2.6" height="2.6" fill="currentColor"/>
+    </svg>
+    <span class="brand-word"><b>APOSTLE</b><span>Flooring &amp; Painting LLC</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#work">The Work</a>
+    <a href="#transform">Transformations</a>
+    <a href="#follow">Follow</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="tel:+13604648555" class="btn btn-ghost">(360) 464-8555</a>
+    <a href="#contact" class="btn btn-red">Free estimate <span class="arr">→</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu">
+  <a class="big cond" href="#services">Services</a>
+  <a class="big cond" href="#work">The Work</a>
+  <a class="big cond" href="#follow">Follow</a>
+  <a class="big cond red" href="#contact">Contact</a>
+  <a class="mono" style="margin-top:24px" href="tel:+13604648555">Call (360) 464-8555</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="hero-img" id="heroImg"></div>
+  <div class="hero-meta mono">
+    <span>Centralia, Washington</span>
+    <span class="hide-s">Painting · Flooring · Remodeling</span>
+    <span>Open 7 days</span>
+  </div>
+  <div class="hero-chip">
+    <div class="chip"><div class="sw"></div><div class="tx"><b>Exterior repaint</b><span>Siding · Trim · Fascia</span></div></div>
+  </div>
+  <div class="hero-inner">
+    <h1 class="cond">
+      <span class="line"><span>A lasting</span></span>
+      <span class="line"><span>impression</span></span>
+      <span class="line"><span>that <span class="it">shines.</span></span></span>
+    </h1>
+    <div class="hero-side">
+      <p>Family-owned painting, flooring and home remodeling for residential and commercial properties across Western Washington.</p>
+      <a href="#work" class="btn btn-red">See the work <span class="arr">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- INTRO -->
+<section class="sec" data-screen-label="02 Intro">
+  <div class="intro">
+    <span class="mono" style="color:var(--stone);padding-top:12px">(01) — Who we are</span>
+    <div>
+      <p class="intro-statement reveal">A general contractor that <em>specializes</em> in the finishes you notice first — <span class="u">painting, siding and flooring</span> — done with pride, honesty and respect for your home.</p>
+      <div class="intro-grid">
+        <figure class="intro-photo reveal">
+          <img src="assets/p-beige-house.jpg" alt="Two-story home with fresh exterior paint, white trim and columns, ladder on the porch">
+          <figcaption class="cap mono">Exterior repaint — on the job</figcaption>
+        </figure>
+        <div class="facts reveal">
+          <div class="fact"><span class="mono">01</span><div><b>Family-owned</b><span>Owner-led crews on every project.</span></div></div>
+          <div class="fact"><span class="mono">02</span><div><b>Residential &amp; commercial</b><span>Interior and exterior, homes and businesses.</span></div></div>
+          <div class="fact"><span class="mono">03</span><div><b>Free consultation</b><span>Call today for a free estimate.</span></div></div>
+          <div class="fact"><span class="mono">04</span><div><b>Bonded</b><span>Serving Centralia, Olympia, Tacoma &amp; Seattle.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec dark" id="services" data-screen-label="03 Services">
+  <div class="sec-head">
+    <span class="mono">(02) — Services</span>
+    <h2 class="cond">Three trades.<br><span class="it" style="color:var(--red)">One standard.</span></h2>
+  </div>
+  <div class="svc-list" id="svcList">
+    <div class="svc" data-img="0">
+      <span class="mono num">01 / Painting</span>
+      <div><h3 class="cond">Painting</h3></div>
+      <div class="desc"><p>Residential and commercial painting, inside and out — walls, ceilings, trim, siding and decks, including solid body stains.</p>
+        <div class="tags"><span>Interior</span><span>Exterior</span><span>Trim</span><span>Deck stain</span></div></div>
+      <span class="go">→</span>
+    </div>
+    <div class="svc" data-img="1">
+      <span class="mono num">02 / Flooring</span>
+      <div><h3 class="cond">Flooring</h3></div>
+      <div class="desc"><p>Flooring of all types, installed with care from subfloor to final transition strip.</p>
+        <div class="tags"><span>All types</span><span>Installation</span><span>Repair</span></div></div>
+      <span class="go">→</span>
+    </div>
+    <div class="svc" data-img="2">
+      <span class="mono num">03 / Remodeling</span>
+      <div><h3 class="cond">Remodel</h3></div>
+      <div class="desc"><p>Home remodeling and carpentry from a licensed general contractor — the work in between the paint and the floor.</p>
+        <div class="tags"><span>Remodeling</span><span>Carpentry</span><span>Siding repair</span></div></div>
+      <span class="go">→</span>
+    </div>
+  </div>
+  <div class="also">
+    <span class="mono">Also</span>
+    <div><b>Pressure washing</b><span>Siding, decks and hardscape prep.</span></div>
+    <div><b>Siding repair</b><span>Boards, trim and fascia restored before paint.</span></div>
+    <div><b>Carpentry</b><span>Trim repairs, steps and finish work.</span></div>
+    <div><b>Commercial</b><span>Painting and flooring for businesses.</span></div>
+  </div>
+  <div class="svc-float" id="svcFloat">
+    <img src="assets/p-navy-house.jpg" alt="">
+    <img src="assets/s-parquet.jpg" alt="">
+    <img src="assets/s-kitchen.jpg" alt="">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="work" data-screen-label="04 Gallery">
+  <div class="sec-head">
+    <span class="mono">(03) — The Work</span>
+    <h2 class="cond">Craft you can<br><span class="it">see up close.</span></h2>
+  </div>
+  <div class="gal-bar">
+    <div class="filters" id="filters"></div>
+    <div class="legend mono"><span><i style="background:var(--red)"></i>Apostle project</span><span><i style="background:var(--stone)"></i>Finish reference</span></div>
+  </div>
+  <div class="grid" id="grid">
+    <figure class="tile s-a" data-i="0" data-cat="Exterior" data-own="1" data-t="Exterior repaint — navy siding, white trim">
+      <img src="assets/p-navy-house.jpg" alt="Exterior repaint — navy siding, white trim" loading="lazy">
+      <span class="badge "><i></i>Apostle project</span>
+      <figcaption class="meta"><div><b>Exterior repaint — navy siding, white trim</b></div><span class="mono">Exterior</span></figcaption>
+    </figure>
+    <figure class="tile s-b" data-i="1" data-cat="Flooring" data-own="0" data-t="Herringbone finish coat">
+      <img src="assets/s-parquet.jpg" alt="Herringbone finish coat" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Herringbone finish coat</b></div><span class="mono">Flooring</span></figcaption>
+    </figure>
+    <figure class="tile s-c" data-i="2" data-cat="Exterior Decks" data-own="1" data-t="Deck stain, steps &amp; trim">
+      <img src="assets/p-deck-steps.jpg" alt="Deck stain, steps &amp; trim" loading="lazy">
+      <span class="badge "><i></i>Apostle project</span>
+      <figcaption class="meta"><div><b>Deck stain, steps &amp; trim</b></div><span class="mono">Exterior</span></figcaption>
+    </figure>
+    <figure class="tile s-d" data-i="3" data-cat="Interior" data-own="0" data-t="Painted trim &amp; doors, warm wood floors">
+      <img src="assets/s-interior.jpg" alt="Painted trim &amp; doors, warm wood floors" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Painted trim &amp; doors, warm wood floors</b></div><span class="mono">Interior</span></figcaption>
+    </figure>
+    <figure class="tile s-d" data-i="4" data-cat="Flooring" data-own="0" data-t="Plank finish selection">
+      <img src="assets/s-floor-samples.jpg" alt="Plank finish selection" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Plank finish selection</b></div><span class="mono">Flooring</span></figcaption>
+    </figure>
+    <figure class="tile s-d" data-i="5" data-cat="Interior" data-own="0" data-t="Cutting in — a clean ceiling line">
+      <img src="assets/s-cutting-in.jpg" alt="Cutting in — a clean ceiling line" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Cutting in — a clean ceiling line</b></div><span class="mono">Interior</span></figcaption>
+    </figure>
+    <figure class="tile s-e" data-i="6" data-cat="Exterior Decks" data-own="1" data-t="Lakeside cabin — siding &amp; deck">
+      <img src="assets/p-lake-cabin.jpg" alt="Lakeside cabin — siding &amp; deck" loading="lazy">
+      <span class="badge "><i></i>Apostle project</span>
+      <figcaption class="meta"><div><b>Lakeside cabin — siding &amp; deck</b></div><span class="mono">Exterior</span></figcaption>
+    </figure>
+    <figure class="tile s-f" data-i="7" data-cat="Flooring" data-own="0" data-t="Character-grade oak detail">
+      <img src="assets/s-oak.jpg" alt="Character-grade oak detail" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Character-grade oak detail</b></div><span class="mono">Flooring</span></figcaption>
+    </figure>
+    <figure class="tile s-g" data-i="8" data-cat="Exterior" data-own="1" data-t="Two-story exterior repaint">
+      <img src="assets/p-beige-house.jpg" alt="Two-story exterior repaint" loading="lazy">
+      <span class="badge "><i></i>Apostle project</span>
+      <figcaption class="meta"><div><b>Two-story exterior repaint</b></div><span class="mono">Exterior</span></figcaption>
+    </figure>
+    <figure class="tile s-g" data-i="9" data-cat="Remodel Interior" data-own="0" data-t="Kitchen remodel, painted cabinetry">
+      <img src="assets/s-kitchen.jpg" alt="Kitchen remodel, painted cabinetry" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Kitchen remodel, painted cabinetry</b></div><span class="mono">Remodel</span></figcaption>
+    </figure>
+    <figure class="tile s-b" data-i="10" data-cat="Flooring" data-own="0" data-t="Final wipe-down on plank floors">
+      <img src="assets/s-floor-wipe.jpg" alt="Final wipe-down on plank floors" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Final wipe-down on plank floors</b></div><span class="mono">Flooring</span></figcaption>
+    </figure>
+    <figure class="tile s-c" data-i="11" data-cat="Flooring Remodel" data-own="0" data-t="Tile setting to a laser line">
+      <img src="assets/s-tile-install.jpg" alt="Tile setting to a laser line" loading="lazy">
+      <span class="badge ref"><i></i>Reference</span>
+      <figcaption class="meta"><div><b>Tile setting to a laser line</b></div><span class="mono">Flooring</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="sec dark" id="transform" data-screen-label="05 Before After" style="background:var(--paper-2);color:var(--ink)">
+  <div class="ba-sec">
+    <div class="ba reveal" id="ba">
+      <div class="layer before"></div>
+      <div class="layer after" id="baAfter"></div>
+      <div class="handle" id="baHandle"><div class="knob">⟷</div></div>
+      <span class="lbl l mono">Before</span>
+      <span class="lbl r mono">After</span>
+    </div>
+    <div class="ba-copy">
+      <span class="mono" style="color:var(--stone);display:block;margin-bottom:22px">(04) — Transformations</span>
+      <h2 class="cond">Drag to see<br>the <span class="it red">difference.</span></h2>
+      <p>Tired, sanded-down boards brought back to a deep, even sheen. The same eye for detail goes into every floor and every wall we touch.</p>
+      <p class="note mono" style="font-size:11px">Floor refinish reference · Project before &amp; afters from the Apostle feed go here</p>
+      <div style="margin-top:30px;display:flex;gap:10px;flex-wrap:wrap">
+        <a href="#contact" class="btn btn-red">Start your transformation <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIELD NOTE -->
+<section class="sec dark" data-screen-label="06 Field Note">
+  <div class="sec-head">
+    <span class="mono">(05) — From the field</span>
+    <h2 class="cond">Latest job<br><span class="it">off the ladder.</span></h2>
+  </div>
+  <div class="field">
+    <span></span>
+    <div class="field-photo reveal"><img src="assets/p-deck-steps.jpg" alt="Cedar-shingle cabin with freshly stained deck and steps, green trim"></div>
+    <div class="field-card reveal">
+      <div>
+        <span class="mono" style="color:var(--red);display:block;margin-bottom:20px">Posted June 26, 2026</span>
+        <p class="q">“Residential repaint with some trim repairs and a <em>solid body stain</em> for the deck — it’s not too late to get on our schedule, call us today for a free estimate.”</p>
+      </div>
+      <div class="src mono"><span>Apostle Flooring &amp; Painting</span><a href="https://www.facebook.com/Apostleworks" target="_blank" rel="noopener">Facebook ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW + HOW -->
+<section class="sec" data-screen-label="07 Review">
+  <div class="review reveal">
+    <div class="stars"><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="mono" style="color:var(--stone);display:block;margin-bottom:26px">5.0 — Google review</span>
+    <blockquote><span class="op">“</span>Jake and Danny are top notch! They are contractors that take pride in their work, display honesty, integrity, and respect all aspects of the&nbsp;…<span class="op">”</span></blockquote>
+    <cite class="mono"><b>Stephanie Frutig</b> &nbsp;·&nbsp; March 2023</cite>
+  </div>
+
+  <div class="how" style="margin-top:clamp(80px,10vw,140px)">
+    <span class="mono" style="color:var(--stone)">(06) — Getting started</span>
+    <div class="step reveal"><span class="n">01</span><b>Call or send a request</b><span>Reach us at (360) 464-8555 — we pick up seven days a week.</span></div>
+    <div class="step reveal"><span class="n">02</span><b>Free estimate</b><span>We look at the job, talk through options and give you a free consultation.</span></div>
+    <div class="step reveal"><span class="n">03</span><b>The work — done right</b><span>Pay the way that suits you.</span>
+      <div class="pay"><span>Venmo</span><span>Cash App</span><span>Debit</span><span>Credit</span></div></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="sec" id="follow" style="padding-top:0" data-screen-label="08 Follow">
+  <div class="sec-head">
+    <span class="mono">(07) — Follow the work</span>
+    <h2 class="cond">New projects,<br><span class="it">every week.</span></h2>
+  </div>
+  <div class="social">
+    <a class="soc reveal" href="https://www.instagram.com/floetic.fire" target="_blank" rel="noopener">
+      <img src="assets/p-lake-cabin.jpg" alt="Lakeside cabin with stained deck and cedar shingle siding">
+      <div class="top mono"><span>Instagram</span><span>↗</span></div>
+      <div class="bot"><div><h3 class="cond">Instagram</h3><span class="handle">@floetic.fire</span></div><span class="go">→</span></div>
+    </a>
+    <a class="soc reveal" href="https://www.facebook.com/Apostleworks" target="_blank" rel="noopener">
+      <img src="assets/p-navy-house.jpg" alt="Navy blue two-story home with crisp white trim among evergreens" style="object-position:30% 50%">
+      <div class="top mono"><span>Facebook</span><span>↗</span></div>
+      <div class="bot"><div><h3 class="cond">Facebook</h3><span class="handle">/Apostleworks</span></div><span class="go">→</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec dark" id="contact" data-screen-label="09 Contact">
+  <div class="contact">
+    <div>
+      <span class="mono" style="color:rgba(243,240,234,.55);display:block;margin-bottom:22px">(08) — Free estimate</span>
+      <h2 class="cond">Let’s talk<br>about your <span class="it red">place.</span></h2>
+      <a href="tel:+13604648555" class="phone">(360) 464-8555</a>
+      <div class="cinfo">
+        <div><span class="mono">Based in</span><p>Centralia, Washington</p></div>
+        <div><span class="mono">Hours</span><p>Open every day</p></div>
+        <div><span class="mono">Serving</span><p>Centralia · Olympia · Tacoma · Seattle</p></div>
+        <div><span class="mono">Accepted</span><p>Venmo · Cash App · Debit · Credit</p></div>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <div class="fld"><label class="mono" for="f1">First name</label><input id="f1" required></div>
+      <div class="fld"><label class="mono" for="f2">Last name</label><input id="f2"></div>
+      <div class="fld"><label class="mono" for="f3">Email</label><input id="f3" type="email"></div>
+      <div class="fld"><label class="mono" for="f4">Phone</label><input id="f4" type="tel"></div>
+      <div class="fld full"><label class="mono">What do you need?</label>
+        <div class="pills">
+          <label><input type="checkbox" checked><span>Interior painting</span></label>
+          <label><input type="checkbox"><span>Exterior painting</span></label>
+          <label><input type="checkbox"><span>Flooring</span></label>
+          <label><input type="checkbox"><span>Remodeling</span></label>
+          <label><input type="checkbox"><span>Siding repair</span></label>
+          <label><input type="checkbox"><span>Pressure washing</span></label>
+          <label><input type="checkbox"><span>Commercial</span></label>
+        </div>
+      </div>
+      <div class="fld full"><label class="mono" for="f5">Tell us about your project</label><textarea id="f5" rows="3"></textarea></div>
+      <div class="submit">
+        <small>We’ll get back to you to schedule your free estimate. Prefer to talk? Call (360) 464-8555.</small>
+        <button class="btn btn-red" type="submit">Request free estimate <span class="arr">→</span></button>
+      </div>
+      <div class="sent"><span class="it" style="font-size:44px;color:var(--red)">Thank you.</span><br>Your request is in — we’ll be in touch soon.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-word">APOSTLE</div>
+  <div class="foot-row mono">
+    <span>© Apostle Flooring &amp; Painting LLC · Centralia, WA</span>
+    <span><a href="https://www.instagram.com/floetic.fire" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/Apostleworks" target="_blank" rel="noopener">Facebook</a> &nbsp;·&nbsp; <a href="tel:+13604648555">(360) 464-8555</a></span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+13604648555" class="btn btn-ghost" style="background:var(--paper);color:var(--ink);border-color:var(--paper)">Call now</a>
+  <a href="#contact" class="btn btn-red">Free estimate</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-top"><span class="mono" id="lbCount">01 / 12</span><button class="lb-close" id="lbClose">Close ✕</button></div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">←</button>
+    <img id="lbImg" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">→</button>
+  </div>
+  <div class="lb-bot"><b id="lbTitle"></b><span class="mono" id="lbTag"></span></div>
+</div>
+
+<script>
+(function(){
+  /* ticker */
+  const words=['Residential','Commercial','Interior · Exterior','Painting','Flooring — all types','Pressure washing','Siding repair','Home remodeling','Carpentry','Free estimates'];
+  const tk=document.getElementById('ticker');
+  const seq=words.map((w,i)=>`<span class="stroke ${['r','w'][i%2]}">${w}</span>`).join('');
+  tk.innerHTML=seq+seq;
+
+  /* nav state + hero parallax */
+  const nav=document.getElementById('nav'), heroImg=document.getElementById('heroImg');
+  const onScroll=()=>{
+    const y=window.scrollY;
+    nav.classList.toggle('solid',y>window.innerHeight*0.7);
+    if(y<window.innerHeight) heroImg.style.transform=`translateY(${y*0.25}px) scale(${1+y*0.0002})`;
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* mobile menu */
+  document.getElementById('burger').onclick=()=>document.body.classList.toggle('menu-open');
+  document.querySelectorAll('#mmenu a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu-open'));
+
+  /* reveal */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  const watch=()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+  /* services hover image */
+  const fl=document.getElementById('svcFloat'), flImgs=fl.querySelectorAll('img');
+  document.querySelectorAll('.svc').forEach(row=>{
+    row.addEventListener('mouseenter',()=>{fl.classList.add('on');flImgs.forEach((im,i)=>im.classList.toggle('on',i==row.dataset.img))});
+    row.addEventListener('mouseleave',()=>fl.classList.remove('on'));
+    row.addEventListener('mousemove',e=>{fl.style.left=(e.clientX+180)+'px';fl.style.top=e.clientY+'px'});
+  });
+
+  /* gallery */
+  const grid=document.getElementById('grid');
+  const items=[...document.querySelectorAll('#grid .tile')].map(t=>({src:t.querySelector('img').getAttribute('src'),t:t.dataset.t,cat:t.dataset.cat.split(' '),own:t.dataset.own==='1'}));
+  const cats=['All','Exterior','Interior','Flooring','Decks','Remodel'];
+  const fbar=document.getElementById('filters');
+  fbar.innerHTML=cats.map((c,i)=>{
+    const n=c==='All'?items.length:items.filter(x=>x.cat.includes(c)).length;
+    return `<button class="${i?'':'on'}" data-c="${c}">${c}<sup>${String(n).padStart(2,'0')}</sup></button>`}).join('');
+  let visible=items.map((_,i)=>i);
+  fbar.addEventListener('click',e=>{
+    const b=e.target.closest('button');if(!b)return;
+    fbar.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+    const c=b.dataset.c;visible=[];
+    grid.querySelectorAll('.tile').forEach(t=>{
+      const show=c==='All'||t.dataset.cat.split(' ').includes(c);
+      t.classList.toggle('hide',!show);
+      if(show){visible.push(+t.dataset.i);t.animate([{opacity:0,transform:'scale(.97)'},{opacity:1,transform:'none'}],{duration:500,easing:'cubic-bezier(.2,.7,.1,1)'})}
+    });
+  });
+
+  /* lightbox */
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+  let cur=0;
+  const show=k=>{
+    cur=(k+visible.length)%visible.length;const it=items[visible[cur]];
+    lbImg.style.opacity=0;
+    setTimeout(()=>{lbImg.src=it.src;lbImg.alt=it.t;lbImg.style.opacity=1},150);
+    document.getElementById('lbTitle').textContent=it.t;
+    document.getElementById('lbTag').textContent=(it.own?'Apostle project':'Finish reference')+' · '+it.cat.join(' / ');
+    document.getElementById('lbCount').textContent=String(cur+1).padStart(2,'0')+' / '+String(visible.length).padStart(2,'0');
+  };
+  grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(!t)return;show(visible.indexOf(+t.dataset.i));lb.classList.add('open');lb.setAttribute('aria-hidden','false')});
+  const close=()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true')};
+  document.getElementById('lbClose').onclick=close;
+  document.getElementById('lbPrev').onclick=()=>show(cur-1);
+  document.getElementById('lbNext').onclick=()=>show(cur+1);
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb-stage'))close()});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  /* before/after */
+  const ba=document.getElementById('ba'),after=document.getElementById('baAfter'),hd=document.getElementById('baHandle');
+  let drag=false;
+  const set=x=>{const r=ba.getBoundingClientRect();let p=Math.min(98,Math.max(2,(x-r.left)/r.width*100));after.style.clipPath=`inset(0 0 0 ${p}%)`;hd.style.left=p+'%'};
+  ba.addEventListener('pointerdown',e=>{drag=true;ba.setPointerCapture(e.pointerId);set(e.clientX)});
+  ba.addEventListener('pointermove',e=>{if(drag)set(e.clientX)});
+  ba.addEventListener('pointerup',()=>drag=false);
+  /* gentle intro sweep */
+  const baIO=new IntersectionObserver(es=>{if(es[0].isIntersecting){baIO.disconnect();let t0=null;const r=ba.getBoundingClientRect();
+    const step=ts=>{if(drag)return;t0=t0||ts;const k=Math.min(1,(ts-t0)/1800);const p=50+Math.sin(k*Math.PI*2)*-22*(1-k);after.style.clipPath=`inset(0 0 0 ${p}%)`;hd.style.left=p+'%';if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}},{threshold:.5});
+  baIO.observe(ba);
+
+  /* form */
+  const form=document.getElementById('form');
+  form.addEventListener('submit',e=>{e.preventDefault();const f=document.getElementById('f1');if(!f.value.trim()){f.focus();f.parentElement.style.borderColor='var(--red)';return}form.classList.add('done')});
+
+  watch();
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
